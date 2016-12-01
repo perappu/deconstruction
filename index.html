@@ -1,0 +1,70 @@
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<style>
+body {
+margin: 0px;}
+
+ul {
+list-style: none;
+margin: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+# Layers
+.bottom-1 {
+    bottom: 0px;
+}
+
+.bottom-2 {
+    bottom: 0px;
+}
+
+.middle-1 {
+    left: 20%;
+}
+
+.middle-2 {
+    right: 30%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="container" class="container">
+<ul id="scene" class="scene">
+    <li class="layer" data-depth="0.20"><div class="bottom-2"><img src="./images/bottom2.png"></div></li>
+    <li class="layer" data-depth="0.60"><div class="bottom-1"><img src="./images/bottom1.png"></div></li>
+    <li class="layer" data-depth="0.80"><div class="middle-2"><img src="./images/middle2.png"></div></li>
+    <li class="layer" data-depth="1.00"><div class="middle-1"><img src="./images/middle1.png"></div></li>
+</ul>
+</div>
+
+<!--Scripts-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="./js/jquery.parallax.min.js"></script>
+<script src="./js/parallax.min.js"></script>
+<script>
+
+$('#scene').parallax();
+
+</script>
+
+</body>
+
+</html>
