@@ -5,6 +5,16 @@
 
 <style>
 
+#toggle {
+position:fixed;
+right:0;
+bottom:0;
+margin: 1%;
+padding: 1%;
+z-index: 1000;
+background-color: #CCCCCC;
+    }
+
 .scene,
 .layer {
   display: block;
@@ -21,17 +31,51 @@
      right: 0;
      bottom: 0;
      left: 0;
+     position: relative;
 }
 
 .container {
     width: 100%;
     min-height: 768px;
     height: 100%;
-    position: absolute;
+    position: relative;
+    margin: 0 auto;
 }
 
 img {
-height: 100%;}
+height: 100%;
+width: 100%;}
+
+#Layers
+
+.image {
+    height: 100%;
+    width: 100%;
+}
+
+#1 {
+    background-image: url("images/1.png");
+}
+
+#2 {
+    background-image: url("images/2.png");
+}
+
+#3 {
+    background-image: url("images/3.png");
+}
+
+#4 {
+    background-image: url("images/4.png");
+}
+
+#5 {
+    background-image: url("images/5.png");
+}
+
+#6 {
+    background-image: url("images/6.png");
+}
 
 </style>
 
@@ -39,14 +83,17 @@ height: 100%;}
 
 <body>
 
+<div id="toggle">Toggle
+</div>
+
 <div id="container" class="container">
     <ul id="scene" class="scene">
-        <li class="layer" data-depth="0.50"><img src="images/6.png" /></li>
-        <li class="layer" data-depth="0.60"><img src="images/5.png" /></li>
-        <li class="layer" data-depth="0.70"><img src="images/4.png" /></li>
-        <li class="layer" data-depth="0.80"><img src="images/3.png" /></li>
-        <li class="layer" data-depth="0.90"><img src="images/2.png" /></li>
-        <li class="layer" data-depth="1.00"><img src="images/1.png" /></li>
+        <li class="layer" data-depth="0.50"><div class="image" id="6"><img src="images/6.png" /></div></li>
+        <li class="layer" data-depth="0.60"><div class="image" id="5"><img src="images/5.png" /></div></li>
+        <li class="layer" data-depth="0.70"><div class="image" id="4"><img src="images/4.png" /></div></li>
+        <li class="layer" data-depth="0.80"><div class="image" id="3"><img src="images/3.png" /></div></li>
+        <li class="layer" data-depth="0.90"><div class="image" id="2"><img src="images/2.png" /></div></li>
+        <li class="layer" data-depth="1.00"><div class="image" id="1"><img src="images/1.png" /></div></li>
     </ul>
 </div>
 
@@ -55,6 +102,31 @@ height: 100%;}
 <script src="./js/jquery.parallax.min.js"></script>
 <script src="./js/parallax.min.js"></script>
 <script>
+
+illustrations = ["images/1.png","images/2.png","images/3.png","images/4.png","images/5.png","images/6.png"];
+photos = ["images/7.png","images/8.png","images/9.png","images/10.png","images/11.png","images/12.png"];
+
+photoToggle = false;
+
+$( "#toggle" ).click(function() {
+    console.log(photoToggle);
+    if ( photoToggle == false ) {
+        $( ".image" ).each(function( index, element ) {
+            $( this ).css("background-image", "url(" + photos[index] + ")");
+            console.log(photos[index]);
+        });
+        photoToggle = true;
+      
+    } else {
+        $( ".image" ).each(function( index, element ) {
+            $( this ).css("background-image", "url(" + illustrations[index] + ")");
+            console.log(illustrations[index]);
+        });
+        photoToggle = false;
+    
+    }
+    
+  });
 
 $('#scene').parallax();
 
