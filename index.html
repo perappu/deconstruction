@@ -79,29 +79,29 @@ body {
 }
 
 #image1 {
-    background-image: url("images/1/1.png");
+    background-image: url("images/0/1.png");
 }
 
 #image2 {
-    background-image: url("images/1/2.png");
+    background-image: url("images/0/2.png");
     background-repeat: repeat-x;
 }
 
 #image3 {
-    background-image: url("images/1/3.png");
+    background-image: url("images/0/3.png");
 }
 
 #image4 {
-    background-image: url("images/1/4.png");
+    background-image: url("images/0/4.png");
 }
 
 #image5 {
-    background-image: url("images/1/5.png");
+    background-image: url("images/0/5.png");
     background-repeat: repeat-x;
 }
 
 #image6 {
-    background-image: url("images/1/6.png");
+    background-image: url("images/0/6.png");
 }
 
 </style>
@@ -137,7 +137,7 @@ illustrations = ["6.png","5.png","4.png","3.png","2.png","1.png"];
 photos = ["12.png","11.png","10.png","9.png","8.png","7.png"];
 
 photoToggle = false;
-position = 1;
+position = 0;
 
 function refreshImage() {
 
@@ -163,7 +163,7 @@ function refreshImage() {
 $( "#left" ).click(function() { 
      position--;
      if(position == -1) {
-        position = 2;
+        position = 0;
     }
     refreshImage();
 });
@@ -171,7 +171,7 @@ $( "#left" ).click(function() {
 $( "#right" ).click(function() { 
     position++;
      if(position == 3) {
-        position = 0;
+        position = 2;
     } 
     refreshImage();
 });
