@@ -5,54 +5,32 @@
 
 <style>
 
+.scene,
+.layer {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+
 .scene {
-    min-height: 900px;
     position: relative:
-    overflow: hidden;
     display: block;
-    padding: 5%;
-    margin: 0;
+    margin: 0 auto;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
 }
 
 .container {
-    height: 900px;
+    height: 1024px;
+    width: 768px;
     position: absolute;
-    overflow: hidden;
-    display: table;
-    width: 1000px;
-    padding: 5%;
+    
 }
 
 # Layers
-.bottom-1 {
-    position: absolute;
-    width: 1000px;
-    height: 100px;
-    background-color: #B22222;
-}
-
-.bottom-2 {
-    width: 1000px;
-    height: 300px;
-    position: absolute;
-    background-color: #683A5E;
-}
-
-.middle-1 {
-    left: 20%;
-    position: absolute;
-    height: 250px;
-    width: 100px;
-    background-color: #3299CC;
-}
-
-.middle-2 {
-    right: 30%;
-    position: absolute;
-    height: 300px;
-    width: 125px;
-    background-color: #F87531;
-}
 
 </style>
 
@@ -62,10 +40,16 @@
 
 <div id="container" class="container">
     <ul id="scene" class="scene">
-        <li class="layer" data-depth="0.20"><div class="bottom-2"></div></li>
-        <li class="layer" data-depth="0.60"><div class="bottom-1"></div></li>
-        <li class="layer" data-depth="0.80"><div class="middle-2"></div></li>
-        <li class="layer" data-depth="1.00"><div class="middle-1"></div></li>
+        <li class="layer" data-depth="0.10"><img src="images/10.png" /></li>
+        <li class="layer" data-depth="0.20"><img src="images/9.png" /></li>
+        <li class="layer" data-depth="0.30"><img src="images/8.png" /></li>
+        <li class="layer" data-depth="0.40"><img src="images/7.png" /></li>
+        <li class="layer" data-depth="0.50"><img src="images/6.png" /></li>
+        <li class="layer" data-depth="0.60"><img src="images/5.png" /></li>
+        <li class="layer" data-depth="0.70"><img src="images/4.png" /></li>
+        <li class="layer" data-depth="0.80"><img src="images/3.png" /></li>
+        <li class="layer" data-depth="0.90"><img src="images/2.png" /></li>
+        <li class="layer" data-depth="1.00"><img src="images/1.png" /></li>
     </ul>
 </div>
 
