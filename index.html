@@ -11,10 +11,10 @@
   height: 100%;
   width: 100%;
   padding: 0;
-  margin: 0; }
+  margin: 0; 
+  overflow: hidden;}
 
 .scene {
-    position: relative:
     display: block;
     margin: 0 auto;
      top: 0;
@@ -24,13 +24,14 @@
 }
 
 .container {
-    height: 1024px;
-    width: 768px;
+    width: 100%;
+    min-height: 768px;
+    height: 100%;
     position: absolute;
-    
 }
 
-# Layers
+img {
+height: 100%;}
 
 </style>
 
@@ -40,10 +41,6 @@
 
 <div id="container" class="container">
     <ul id="scene" class="scene">
-        <li class="layer" data-depth="0.10"><img src="images/10.png" /></li>
-        <li class="layer" data-depth="0.20"><img src="images/9.png" /></li>
-        <li class="layer" data-depth="0.30"><img src="images/8.png" /></li>
-        <li class="layer" data-depth="0.40"><img src="images/7.png" /></li>
         <li class="layer" data-depth="0.50"><img src="images/6.png" /></li>
         <li class="layer" data-depth="0.60"><img src="images/5.png" /></li>
         <li class="layer" data-depth="0.70"><img src="images/4.png" /></li>
