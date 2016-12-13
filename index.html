@@ -6,32 +6,31 @@
 <style>
 
 #toggle {
-position:fixed;
-right:0;
-bottom:0;
-margin: 1%;
-padding: 1%;
-z-index: 1000;
-background-color: #CCCCCC;
-    }
+    position:fixed;
+    right:0;
+    bottom:0;
+    margin: 1%;
+    padding: 1%;
+    z-index: 1000;
+    background-color: #CCCCCC;
+}
 
-.scene,
-.layer {
-  display: block;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0; 
-  overflow: hidden;}
+.scene, .layer {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+    overflow: hidden;
+}
 
 .scene {
     display: block;
-    margin: 0 auto;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
-     position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: relative;
 }
 
 .container {
@@ -42,38 +41,34 @@ background-color: #CCCCCC;
     margin: 0 auto;
 }
 
-img {
-height: 100%;
-width: 100%;}
-
-#Layers
-
 .image {
-    height: 100%;
-    width: 100%;
-}
+    height: 1000px;
+    width: 1000px;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    }
 
-#1 {
+#image1 {
     background-image: url("images/1.png");
 }
 
-#2 {
+#image2 {
     background-image: url("images/2.png");
 }
 
-#3 {
+#image3 {
     background-image: url("images/3.png");
 }
 
-#4 {
+#image4 {
     background-image: url("images/4.png");
 }
 
-#5 {
+#image5 {
     background-image: url("images/5.png");
 }
 
-#6 {
+#image6 {
     background-image: url("images/6.png");
 }
 
@@ -88,12 +83,12 @@ width: 100%;}
 
 <div id="container" class="container">
     <ul id="scene" class="scene">
-        <li class="layer" data-depth="0.50"><div class="image" id="6"><img src="images/6.png" /></div></li>
-        <li class="layer" data-depth="0.60"><div class="image" id="5"><img src="images/5.png" /></div></li>
-        <li class="layer" data-depth="0.70"><div class="image" id="4"><img src="images/4.png" /></div></li>
-        <li class="layer" data-depth="0.80"><div class="image" id="3"><img src="images/3.png" /></div></li>
-        <li class="layer" data-depth="0.90"><div class="image" id="2"><img src="images/2.png" /></div></li>
-        <li class="layer" data-depth="1.00"><div class="image" id="1"><img src="images/1.png" /></div></li>
+        <li class="layer" data-depth="0.50"><div class="image" id="image6"></div></li>
+        <li class="layer" data-depth="0.60"><div class="image" id="image5"></div></li>
+        <li class="layer" data-depth="0.70"><div class="image" id="image4"></div></li>
+        <li class="layer" data-depth="0.80"><div class="image" id="image3"></div></li>
+        <li class="layer" data-depth="0.90"><div class="image" id="image2"></div></li>
+        <li class="layer" data-depth="1.00"><div class="image" id="image1"></div></li>
     </ul>
 </div>
 
@@ -103,7 +98,7 @@ width: 100%;}
 <script src="./js/parallax.min.js"></script>
 <script>
 
-illustrations = ["images/1.png","images/2.png","images/3.png","images/4.png","images/5.png","images/6.png"];
+illustrations = ["images/6.png","images/5.png","images/4.png","images/3.png","images/2.png","images/1.png"];
 photos = ["images/7.png","images/8.png","images/9.png","images/10.png","images/11.png","images/12.png"];
 
 photoToggle = false;
