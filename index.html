@@ -133,6 +133,7 @@ body {
 set0 = ["","photo.png","","",""];
 set1 = ["5.png","4.png","3.png","2.png","1.png"];
 set2 = ["10.png","9.png","8.png","7.png","6.png"];
+set3 = ["15.png","14.png","13.png","12.png","11.png"];
 
 //Default settings for the current image and position
 imageSet = 0;
@@ -177,6 +178,18 @@ function refreshImage() {
             }
         });
         
+    } else if ( imageSet == 3) {
+        
+        $( ".image" ).each(function( index, element ) {
+            if (set3[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + set3[index] + ")");
+                console.log(set3[index]);
+            } else {
+                $( this ).css("background-image", "none");
+                console.log(set3[index]);
+            }
+        });
+        
     }
 
 }
@@ -206,7 +219,7 @@ $( "#right" ).click(function() {
 $( "#toggle" ).click(function() {
     console.log(imageSet);
     imageSet++;
-    if ( imageSet > 2 ) {
+    if ( imageSet > 3 ) {
         imageSet = 0;
     }
     refreshImage();
