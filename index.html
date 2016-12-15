@@ -134,6 +134,8 @@ set0 = ["","photo.png","","",""];
 set1 = ["5.png","4.png","3.png","2.png","1.png"];
 set2 = ["10.png","9.png","8.png","7.png","6.png"];
 set3 = ["15.png","14.png","13.png","12.png","11.png"];
+set4 = ["20.png","19.png","18.png","17.png","16.png"];
+set5 = ["25.png","24.png","23.png","22.png","21.png"];
 
 //Default settings for the current image and position
 imageSet = 0;
@@ -154,7 +156,7 @@ function refreshImage() {
             }
         });
       
-    } else if ( imageSet == 1) {
+    } else if ( imageSet == 1 ) {
         
         $( ".image" ).each(function( index, element ) {
             if (set1[index] != "") {
@@ -166,7 +168,7 @@ function refreshImage() {
             }
         });
         
-    } else if ( imageSet == 2) {
+    } else if ( imageSet == 2 ) {
         
         $( ".image" ).each(function( index, element ) {
             if (set2[index] != "") {
@@ -178,7 +180,7 @@ function refreshImage() {
             }
         });
         
-    } else if ( imageSet == 3) {
+    } else if ( imageSet == 3 ) {
         
         $( ".image" ).each(function( index, element ) {
             if (set3[index] != "") {
@@ -187,6 +189,30 @@ function refreshImage() {
             } else {
                 $( this ).css("background-image", "none");
                 console.log(set3[index]);
+            }
+        });
+        
+    } else if ( imageSet == 4 ) {
+        
+        $( ".image" ).each(function( index, element ) {
+            if (set4[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + set4[index] + ")");
+                console.log(set4[index]);
+            } else {
+                $( this ).css("background-image", "none");
+                console.log(set4[index]);
+            }
+        });
+        
+    } else if ( imageSet == 5 ) {
+        
+        $( ".image" ).each(function( index, element ) {
+            if (set5[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + set5[index] + ")");
+                console.log(set5[index]);
+            } else {
+                $( this ).css("background-image", "none");
+                console.log(set5[index]);
             }
         });
         
@@ -219,7 +245,7 @@ $( "#right" ).click(function() {
 $( "#toggle" ).click(function() {
     console.log(imageSet);
     imageSet++;
-    if ( imageSet > 3 ) {
+    if ( imageSet > 5 ) {
         imageSet = 0;
     }
     refreshImage();
