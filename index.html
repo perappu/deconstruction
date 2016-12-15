@@ -134,7 +134,7 @@ body {
 <script>
 
 illustrations = ["6.png","5.png","4.png","3.png","2.png","1.png"];
-photos = ["12.png","11.png","10.png","9.png","8.png","7.png"];
+photos = ["","","10.png","","",""];
 
 photoToggle = false;
 position = 0;
@@ -143,17 +143,28 @@ function refreshImage() {
 
     if ( photoToggle == false ) {
         $( ".image" ).each(function( index, element ) {
-            $( this ).css("background-image", "url(images/" + position + "/" + illustrations[index] + ")");
-            console.log(illustrations[index]);
+            if (illustrations[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + illustrations[index] + ")");
+                console.log(illustrations[index]);
+            } else {
+                $( this ).css("background-image", "none");
+                console.log(illustrations[index]);
+            }
         });
         $("body").css("background-color","white");
       
     } else {
         
-    $( ".image" ).each(function( index, element ) {
-            $( this ).css("background-image", "url(images/" + position + "/" + photos[index] + ")");
-            console.log(photos[index]);
+        $( ".image" ).each(function( index, element ) {
+            if (photos[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + photos[index] + ")");
+                console.log(photos[index]);
+            } else {
+                $( this ).css("background-image", "none");
+                console.log(photos[index]);
+            }
         });
+        
         $("body").css("background-color","black");
         
     }
