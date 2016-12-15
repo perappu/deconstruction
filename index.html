@@ -83,7 +83,7 @@ body {
 }
 
 #image2 {
-    background-image: url("images/0/10.png");
+    background-image: url("images/0/photo.png");
     background-repeat: repeat-x;
 }
 
@@ -128,44 +128,61 @@ body {
 <script src="./js/parallax.min.js"></script>
 <script>
 
-illustrations = ["5.png","4.png","3.png","2.png","1.png"];
-photos = ["","10.png","","",""];
+//Image arrays
+//Tells which file names to look for in each given set
+set0 = ["","photo.png","","",""];
+set1 = ["5.png","4.png","3.png","2.png","1.png"];
+set2 = ["6.png","7.png","8.png","9.png","10.png"];
 
-photoToggle = true;
+//Default settings for the current image and position
+imageSet = 0;
 position = 0;
 
+//Function to refresh the shown image based on settings
+//Sets the background-image of each parallax layer to be the respective image in a given set
 function refreshImage() {
 
-    if ( photoToggle == false ) {
+    if ( imageSet == 0 ) {
         $( ".image" ).each(function( index, element ) {
-            if (illustrations[index] != "") {
-                $( this ).css("background-image", "url(images/" + position + "/" + illustrations[index] + ")");
-                console.log(illustrations[index]);
+            if (set0[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + set0[index] + ")");
+                console.log(set0[index]);
             } else {
                 $( this ).css("background-image", "none");
-                console.log(illustrations[index]);
+                console.log(set0[index]);
             }
         });
-        $("body").css("background-color","white");
       
-    } else {
+    } else if ( imageSet == 1) {
         
         $( ".image" ).each(function( index, element ) {
-            if (photos[index] != "") {
-                $( this ).css("background-image", "url(images/" + position + "/" + photos[index] + ")");
-                console.log(photos[index]);
+            if (set1[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + set1[index] + ")");
+                console.log(set1[index]);
             } else {
                 $( this ).css("background-image", "none");
-                console.log(photos[index]);
+                console.log(set1[index]);
             }
         });
         
-        $("body").css("background-color","black");
+    } else if ( imageSet == 2) {
+        
+        $( ".image" ).each(function( index, element ) {
+            if (set2[index] != "") {
+                $( this ).css("background-image", "url(images/" + position + "/" + set2[index] + ")");
+                console.log(set2[index]);
+            } else {
+                $( this ).css("background-image", "none");
+                console.log(set2[index]);
+            }
+        });
         
     }
 
 }
 
+//Controls for the left and right movement
+//Checks for and prevents the position from being impossible, i.e. higher than 2 or lower than 0
 $( "#left" ).click(function() { 
      position--;
      if(position == -1) {
@@ -184,20 +201,19 @@ $( "#right" ).click(function() {
     refreshImage();
 });
 
+//Script for toggle button
+//Switches through each set and refreshes image each time
 $( "#toggle" ).click(function() {
-    console.log(photoToggle);
-    if ( photoToggle == false ) {
-        photoToggle = true;
-        refreshImage();
-      
-    } else {
-        photoToggle = false;
-        refreshImage();
-    
+    console.log(imageSet);
+    imageSet++;
+    if ( imageSet > 2 ) {
+        imageSet = 0;
     }
+    refreshImage();
     
   });
   
+//Initialize parallax effect
 $('#scene').parallax();
 
 </script>
