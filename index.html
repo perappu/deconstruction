@@ -257,6 +257,23 @@ $( "#toggle" ).click(function() {
 //Initialize parallax effect
 $('#scene').parallax();
 
+//Preload images
+function preload(arrayOfImages) {
+    $.each(arrayOfImages, function(index, image){
+        $('<img/>')[0].src = "/images/0/" +image;
+        $('<img/>')[0].src = "/images/1/" +image;
+        $('<img/>')[0].src = "/images/2/" +image;
+    });
+}
+
+preload(set0);
+preload(set1);
+preload(set2);
+preload(set3);
+preload(set4);
+preload(set5);
+
+
 </script>
 
 </body>
